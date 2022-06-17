@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { useEffect } from 'react';
 
+
 function App() {
 const url = 'https://pokeapi.co/api/v2/pokemon?limit=151'
 const fetchapi = async () =>{
@@ -13,7 +14,8 @@ useEffect(()=>{
 },[])
   return (
     <div className="App">
-      POKEAPI - 211368
+      <h1> POKEAPI - 211368 </h1>
+      
     </div>
   );
 }

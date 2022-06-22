@@ -8,7 +8,7 @@ function App() {
   const [pokemon, setPokemon] = useState([])
   const [currentpage, setcurrentpage] = useState(0);
  
-  const apiurl = 'https://pokeapi.co/api/v2/pokemon?limit=10'
+  const apiurl = 'https://pokeapi.co/api/v2/pokemon?limit=30'
   const fetchapi = async () =>{
   const response = await fetch(apiurl)
   const resJSON = await response.json() 

@@ -6,28 +6,34 @@ import { useEffect, useState } from 'react';
 
 function App() { 
   const [pokemon, setPokemon] = useState([])
+  const [currentpage, setcurrentpage] = useState(0);
  
-  const url = 'https://pokeapi.co/api/v2/pokemon?limit=10'
+  const url = 'https://pokeapi.co/api/v2/pokemon?limit=20'
   const fetchapi = async () =>{
   const response = await fetch(url)
-    const resJSON = await response.json()
-    
-    for(let i=0; resJSON.results.length; i++){      
-      
+  const resJSON = await response.json() 
+    for(let i=0; resJSON.results.length; i++){       
       const respoke = await fetch(resJSON.results[i].url)
       const pokeJSON = await respoke.json()
       setPokemon(prevArray => [...prevArray,pokeJSON])
       console.log(pokeJSON)
       }
-      console.log(pokemon)
-  
- 
 }
+
 
 
 useEffect(() =>{
   fetchapi()
 },[])
+const pagepokemon = ()=>{
+  return pokemon.slice(currentpage,currentpage + 10); 
+}
+const nextPage = ()=>{
+  setcurrentpage(currentpage + 10);
+}
+const prevPage = ()=>{
+  setcurrentpage(currentpage - 10);
+}
 
 
   return (
@@ -35,8 +41,8 @@ useEffect(() =>{
       <h1> POKEAPI - 211368 </h1>
       <div className='container-fluid'>
         <div className="container">          
-          <div className="row">
-          {pokemon.map((poke, index)=> ( 
+          <div className="row row-cols-1 row-cols-md-3 g-4">
+          {pagepokemon().map((poke, index)=> ( 
             <div className="col-4">               
               <div className="card" key={index} >                
                 <img src={poke.sprites.front_default} ></img>
@@ -47,21 +53,19 @@ useEffect(() =>{
         </div>
       </div>  
       <p></p>
-      <nav aria-label="...">
-      <ul className="pagination">
-        <li className="page-item disabled">
-          <a className="page-link">Previous</a>
-        </li>
-        <li className="page-item"><a className="page-link" href="#">1</a></li>
-        <li className="page-item active" aria-current="page">
-          <a className="page-link" href="#">2</a>
-        </li>
-        <li className="page-item"><a className="page-link" href="#">3</a></li>
-        <li className="page-item">
-          <a className="page-link" href="#">Next</a>
-        </li>
-      </ul>
-      </nav>    
+      <div className="row row-cols-1 row-cols-md-3 g-4">
+        <div className="col-4">
+
+        </div>
+        <div className="col-4">
+        <button type="button" className="btn btn-primary" onClick={prevPage}>Previous</button>
+        <button type="button" className="btn btn-primary" onClick={nextPage}>Next</button>
+        </div>
+        <div className="col-4">
+
+        </div>
+      </div>
+      
     </div>
   );
 }

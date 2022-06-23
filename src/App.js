@@ -13,14 +13,10 @@ function App() {
   const response = await fetch(apiurl)
   const resJSON = await response.json() 
 
-  
-  
-    for(let i=0; resJSON.results.length; i++){  
-      console.log(resJSON.results[i].url)     
+      for(let i=0; resJSON.results.length; i++){  
       const respoke = await fetch(resJSON.results[i].url)
       const pokeJSON = await respoke.json()
-      setPokemon(prevArray => [...prevArray,pokeJSON])
-      
+      setPokemon(prevArray=>[...prevArray, pokeJSON]);      
       }
 }
 
@@ -47,9 +43,9 @@ const prevPage = ()=>{
       <div className='container-fluid'>
         <div className="container">          
           <div className="row row-cols-1 row-cols-md-3 g-4">
-          {pagepokemon().map((poke, index)=> ( 
+          {pagepokemon().map((poke)=> ( 
             <div className="col-4">               
-              <div className="card" id={index} >                
+              <div className="card" >                
                 <img src={poke.sprites.front_default} ></img>
                 <h5 className="card-title">{poke.name}</h5>            
               </div>             

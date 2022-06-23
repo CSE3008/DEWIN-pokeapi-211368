@@ -38,15 +38,19 @@ const prevPage = ()=>{
 
   return (
     <div className="App">
+      <img src='https://phantom-marca.unidadeditorial.es/9265f61b4b94fe9d71cff8ad932d3a7d/resize/660/f/webp/assets/multimedia/imagenes/2021/02/28/16145196328904.jpg'></img>
       <h1> POKEAPI - 211368 </h1>
       <div className='container-fluid'>
         <div className="container">          
           <div className="row row-cols-1 row-cols-md-3 g-4">
           {pagepokemon().map((poke)=> ( 
             <div className="col-4">               
-              <div className="card" >                
-                <img src={poke.sprites.front_default} ></img>
-                <h5 className="card-title">{poke.name}</h5>            
+              <div className="card" > 
+                          
+                <img src={poke.sprites.front_default} className="card-img-top img-thumbnail" ></img>
+                  <div class="card-footer">
+                  <h2 className="card-title fw-bolder text-muted">{poke.name}</h2> 
+                  </div>                           
               </div>             
             </div>))}
             </div>
@@ -58,12 +62,15 @@ const prevPage = ()=>{
 
         </div>
         <div className="col-4">
+        <p></p>
         <button type="button" className="btn btn-primary" onClick={prevPage}>Previous</button>&nbsp;
         <button type="button" className="btn btn-primary" onClick={nextPage}>Next</button>
+        <p></p>
         </div>
         <div className="col-4">
 
         </div>
+        <p></p>
       </div>
       
     </div>

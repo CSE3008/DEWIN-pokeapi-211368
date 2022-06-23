@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { useEffect, useState } from 'react';
 
@@ -8,7 +7,7 @@ function App() {
   const [pokemon, setPokemon] = useState([])
   const [currentpage, setcurrentpage] = useState(0);
  
-  const apiurl = 'https://pokeapi.co/api/v2/pokemon?limit=30'
+  const apiurl = 'https://pokeapi.co/api/v2/pokemon?limit=150'
   const fetchapi = async () =>{
   const response = await fetch(apiurl)
   const resJSON = await response.json() 

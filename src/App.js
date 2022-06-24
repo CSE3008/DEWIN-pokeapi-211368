@@ -4,29 +4,33 @@ import { useEffect, useState } from 'react';
 
 
 function App() { 
-  const [pokemon, setPokemon] = useState([])
+  const [pokemons, setPokemons] = useState([])
   const [currentpage, setcurrentpage] = useState(0);
  
-  const apiurl = 'https://pokeapi.co/api/v2/pokemon?limit=150'
-  const fetchapi = async () =>{
+  const apiurl = 'https://pokeapi.co/api/v2/pokemon?limit=30'
+  
+  
+  const fetchpokeapi = async () =>{
   const response = await fetch(apiurl)
-  const resJSON = await response.json() 
+  const resJSON = await response.json()
 
-      for(let i=0; resJSON.results.length; i++){  
-      const respoke = await fetch(resJSON.results[i].url)
-      const pokeJSON = await respoke.json()
-      setPokemon(prevArray=>[...prevArray, pokeJSON]);      
-      }
+      for(let i=0; i<resJSON.results.length; i++){ 
+        const urlpokemon = resJSON.results[i].url
+        const respokemon = await fetch(urlpokemon)
+        const pokemonJSON = await respokemon.json()
+        setPokemons(prevArray=>[...prevArray, pokemonJSON]);  
+        console.log(pokemonJSON)     
+     }
 }
 
 
 
 useEffect(() =>{
-  fetchapi()
+  fetchpokeapi()
 },[])
 
-const pagepokemon = ()=>{
-  return pokemon.slice(currentpage,currentpage + 10); 
+const pagepokemons = ()=>{
+  return pokemons.slice(currentpage,currentpage + 10); 
 }
 const nextPage = ()=>{
   setcurrentpage(currentpage + 10);
@@ -44,13 +48,12 @@ const prevPage = ()=>{
       <div className='container-fluid'>
         <div className="container">          
           <div className="row row-cols-1 row-cols-md-3 g-4">
-          {pagepokemon().map((poke)=> ( 
-            <div className="col-4">               
-              <div className="card" > 
-                          
-                <img src={poke.sprites.front_default} className="card-img-top img-thumbnail" ></img>
-                  <div class="card-footer">
-                  <h2 className="card-title fw-bolder text-muted">{poke.name}</h2> 
+          {pagepokemons().map((pokemon)=> ( 
+            <div className="col-4" >               
+              <div className="card" key={pokemon.id} >                           
+                <img src={pokemon.sprites.front_default} className="card-img-top img-thumbnail" ></img>
+                  <div className="card-footer">
+                  <h2 className="card-title fw-bolder text-muted">{pokemon.name}</h2> 
                   </div>                           
               </div>             
             </div>))}

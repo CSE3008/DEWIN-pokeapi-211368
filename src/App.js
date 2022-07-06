@@ -42,8 +42,24 @@ const prevPage = ()=>{
 
   return (
     <div className="App">
-      <img src='https://phantom-marca.unidadeditorial.es/9265f61b4b94fe9d71cff8ad932d3a7d/resize/660/f/webp/assets/multimedia/imagenes/2021/02/28/16145196328904.jpg'></img>
-      <h1> POKEAPI - 211368 </h1>
+
+<nav className="navbar bg-light">
+  <div className="container-fluid">
+    <a className="navbar-brand" >
+      <img src="https://www.cardmarket.com/img/public/images/user/avatar/avatar_990995368.png" alt="Pokemon" width="50" height="50" className="d-inline-block align-text-top"></img>
+      Pokeapi - 211368
+    </a>
+ 	<form className="d-flex" role="search">
+   <input type="text" placeholder="Search" aria-label="Search" />
+        
+        <button className="btn btn-outline-success" type="submit">Search</button>
+      </form>
+  </div>
+</nav>
+      {/* <img src='https://phantom-marca.unidadeditorial.es/9265f61b4b94fe9d71cff8ad932d3a7d/resize/660/f/webp/assets/multimedia/imagenes/2021/02/28/16145196328904.jpg'></img>
+      <h1> POKEAPI - 211368 </h1> */}
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2560px-International_Pok%C3%A9mon_logo.svg.png" alt="Pokemon" width="400" height="140"></img>
+      
       <h1> Bookkepper! </h1>
       <div className='container-fluid'>
         <div className="container">          

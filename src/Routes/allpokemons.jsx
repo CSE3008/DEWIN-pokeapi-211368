@@ -42,6 +42,7 @@ export default function Allpokemons(){
         <main style= {{padding: "1rem 0"}}>
           <div className='container-fluid'>
           <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2560px-International_Pok%C3%A9mon_logo.svg.png" alt="Pokemon" width="400" height="140"></img>
+        <p></p>
         <div className="container">          
           <div className="row row-cols-1 row-cols-md-3 g-4">
           {pagepokemons().map((pokemon)=> ( 

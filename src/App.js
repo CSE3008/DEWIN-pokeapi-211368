@@ -1,5 +1,5 @@
 import './App.css';
-import { useEffect, useState } from 'react';
+
 import { Link, Outlet } from 'react-router-dom';
 
 
@@ -30,6 +30,7 @@ function App() {
     <input type="text" placeholder="Search" aria-label="Search" />
         
          <button className="btn btn-outline-success" type="submit">Search</button>
+
        </form>
    </div>
  </nav> 

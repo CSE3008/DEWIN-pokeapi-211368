@@ -5,18 +5,18 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
-import allpokemons from './Routes/allpokemons';
-import pokesearch from './Routes/pokesearch';
-
+import Allpokemons from './Routes/allpokemons';
+import Pokesearch
+ from './Routes/pokesearch';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
     <Routes>
-      
-      <Route path="/" element={<App />} />
-      <Route path="/allpokemons" element={<allpokemons />} />
-      <Route path="/pokesearch" element={<pokesearch />} />
+      <Route path="/" element={<App />}>       
+        <Route path="/allpokemons" element={<Allpokemons />} />
+        <Route path="/pokesearch" element={<Pokesearch />} />
+      </Route>
     </Routes>
     <App />
     </BrowserRouter>

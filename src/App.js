@@ -1,5 +1,6 @@
 import './App.css';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 
@@ -48,6 +49,8 @@ const prevPage = ()=>{
     <a className="navbar-brand" >
       <img src="https://www.cardmarket.com/img/public/images/user/avatar/avatar_990995368.png" alt="Pokemon" width="50" height="50" className="d-inline-block align-text-top"></img>
       Pokeapi - 211368
+      <Link to="/allpokemons"> Allpokemons</Link>
+      <Link to="/pokesearch"> Search</Link>
     </a>
  	<form className="d-flex" role="search">
    <input type="text" placeholder="Search" aria-label="Search" />

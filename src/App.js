@@ -24,20 +24,16 @@ function App() {
    <div className="container-fluid">
      <a className="navbar-brand" >
        <img src="https://www.cardmarket.com/img/public/images/user/avatar/avatar_990995368.png" alt="Pokemon" width="50" height="50" className="d-inline-block align-text-top"></img>
-       Pokeapi - 211368
+       <p>Poke API</p>
      </a>
      <ul className="navbar-nav">
         <li className="nav-item">
-        <Link to="/allpokemons" className='nav-link'> Allpokemons </Link>
+        <Link to="/allpokemons" className='nav-link'> {t("getp")} </Link>
         </li>
         <li className="nav-item">
-        <Link to="/pokesearch"  className='nav-link'> Search</Link>
-        </li>
-        <li className="nav-item">
-        <Link to="/211368"  className='nav-link'> 211368</Link>
-        </li>
-</ul>
-<p
+        <Link to="/211368"  className='nav-link'> About 211368</Link>
+        </li></ul>
+        <p
           className={`App-link ${
             i18n.language === "es" ? "selected" : "unselected"
           }`}
@@ -58,7 +54,8 @@ function App() {
   	<form className="d-flex" role="search">
     <input type="text" placeholder={t("Searchp")} aria-label="Search" />
         
-         <button className="btn btn-outline-primary" type="submit" on>{t("Search")}</button>
+         <button className="btn btn-outline-primary" type="submit" >{t("Search")}</button>
+         {/* onClick={() => } */}
 
        </form>
    </div>

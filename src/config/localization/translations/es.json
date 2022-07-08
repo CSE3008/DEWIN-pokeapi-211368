@@ -1,10 +1,12 @@
 {
     "Search":"Buscar",
     "Searchp":"Buscar un pokemon",
-    "getp":"Todos los Pokemos",
+    "getp":"Todos los Pokemons",
     "name":"Nombre:",
     "birth":"Cumpleaños:",
     "ht":"Ciudad:",
     "oc":"Ocupacion:",
-    "gr":"Carrera:"
+    "gr":"Carrera:",
+    "prev":"Anterior",
+    "next":"Siguiente"
 }

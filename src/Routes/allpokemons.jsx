@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 
 export default function Allpokemons(){
     const [pokemons, setPokemons] = useState([])
     const [currentpage, setcurrentpage] = useState(0);
+    const {i18n, t} = useTranslation(); 
    
        
     const apiurl = 'https://pokeapi.co/api/v2/pokemon?limit=30'
@@ -64,8 +66,8 @@ export default function Allpokemons(){
         </div>
         <div className="col-4">
           <p></p>
-        <button type="button" className="btn btn-primary" onClick={prevPage}>Previous</button>&nbsp;
-        <button type="button" className="btn btn-primary" onClick={nextPage}>Next</button>
+        <button type="button" className="btn btn-primary" onClick={prevPage}>{t("prev")}</button>&nbsp;
+        <button type="button" className="btn btn-primary" onClick={nextPage}>{t("next")}</button>
         <p></p>
         </div>
         <div className="col-4">

@@ -6,6 +6,8 @@
     "birth":"Date of birth:",
     "ht":"Hometown:",
     "oc":"Occupation:",
-    "gr":"Career:"
+    "gr":"Career:",
+    "prev":"Previous",
+    "next":"Next"
 
 }

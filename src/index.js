@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
 import Allpokemons from './Routes/allpokemons';
 import Pokesearch  from './Routes/pokesearch';
+import M211368 from './Routes/211368';
 import { PokemonProvider } from './Context/pokemon-context';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,6 +18,7 @@ root.render(
       <Route path="/" element={<App />}>       
         <Route path="/allpokemons" element={<Allpokemons />} />
         <Route path="/pokesearch" element={<Pokesearch />} />
+        <Route path="/211368" element={<M211368 />} />
       </Route>
     </Routes>
     <App />

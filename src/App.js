@@ -24,6 +24,9 @@ function App() {
         <li className="nav-item">
         <Link to="/pokesearch"  className='nav-link'> Search</Link>
         </li>
+        <li className="nav-item">
+        <Link to="/211368"  className='nav-link'> 211368</Link>
+        </li>
 </ul>
   	<form className="d-flex" role="search">
     <input type="text" placeholder="Search" aria-label="Search" />

@@ -11,13 +11,13 @@ export default function M211368(){
         <main style= {{padding: "1rem 0"}}>
         <div className='container-fluid'>
             <div className="row">
-                <div className="col-2">
+                <div className="col-3">
                 </div>
-                <div className="col-8">
+                <div className="col-6">
                     <div class="card">
                         <div class="profile">
                         <figure>
-                            <img className='figuere-img' src="//s3-us-west-2.amazonaws.com/s.cdpn.io/55758/random-user-31.jpg" alt="Foto" width="150" height="150"/>
+                            <img className='figuere-img' src="https://www.utags.edu.mx/images/CIB/img/LogosCIB/uta.jpg" alt="Foto" width="150" height="150"/>
                         </figure>
                         <header>
                             <h1>Carolina Soto
@@ -39,7 +39,7 @@ export default function M211368(){
                         </div>
                     </div>
                 </div>
-                <div className="col-2">
+                <div className="col-3">
                 </div>
             </div>
         </div>          

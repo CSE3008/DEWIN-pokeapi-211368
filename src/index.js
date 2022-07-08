@@ -9,10 +9,14 @@ import Allpokemons from './Routes/allpokemons';
 import Pokesearch  from './Routes/pokesearch';
 import M211368 from './Routes/211368';
 import { PokemonProvider } from './Context/pokemon-context';
+import { I18nextProvider } from 'react-i18next';
+import i18n from './config/localization/i18n';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <PokemonProvider>
+    <I18nextProvider i18n={i18n}>
+    <PokemonProvider>    
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />}>       
@@ -21,10 +25,10 @@ root.render(
         <Route path="/211368" element={<M211368 />} />
       </Route>
     </Routes>
-    <App />
-    </BrowserRouter>
-    </PokemonProvider>
-   
+    {/* <App /> */}
+    </BrowserRouter>     
+    </PokemonProvider>  
+    </I18nextProvider>   
   </React.StrictMode>
 );
 

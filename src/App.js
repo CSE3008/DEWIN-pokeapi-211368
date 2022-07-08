@@ -2,10 +2,19 @@ import './App.css';
 
 import { Link, Outlet } from 'react-router-dom';
 import { PokemonProvider } from './Context/pokemon-context';
+import { useTranslation } from 'react-i18next';
+import { useContext } from 'react';
+
 
 
 
 function App() { 
+  const {i18n, t} = useTranslation();
+
+  function changeLaguage(language) {
+    i18n.changeLanguage(language);
+  }
+  
 
   return (
     
@@ -28,10 +37,28 @@ function App() {
         <Link to="/211368"  className='nav-link'> 211368</Link>
         </li>
 </ul>
+<p
+          className={`App-link ${
+            i18n.language === "es" ? "selected" : "unselected"
+          }`}
+          onClick={() => changeLaguage("es")}
+        >
+          🇲🇽
+        </p>
+        <p
+          className={`App-link ${
+            i18n.language === "en" ? "selected" : "unselected"
+          }`}
+          onClick={() => changeLaguage("en")}
+        >
+          🇺🇸
+        </p>
+
+
   	<form className="d-flex" role="search">
-    <input type="text" placeholder="Search" aria-label="Search" />
+    <input type="text" placeholder={t("Searchp")} aria-label="Search" />
         
-         <button className="btn btn-outline-primary" type="submit" on>Search</button>
+         <button className="btn btn-outline-primary" type="submit" on>{t("Search")}</button>
 
        </form>
    </div>

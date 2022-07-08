@@ -1,7 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+
+
 
 export default function M211368(){
-    
+
+    const {i18n, t} = useTranslation(); 
 
 
   
@@ -24,15 +28,15 @@ export default function M211368(){
                             <small>QA Proficient</small></h1>
                         </header>                       
                         <dl>
-                                <dt>Full name</dt>
+                                <dt>{t("name")}</dt>
                                     <dd>Carolina Soto Estrada</dd>
-                                <dt>Date of birth</dt>
+                                <dt>{t("birth")}</dt>
                                     <dd>August 30, 1987</dd>
-                                <dt>Hometown</dt>
+                                <dt>{t("ht")}</dt>
                                     <dd>Aguascalientes, Mexico</dd>
-                                <dt>Occupation</dt>
+                                <dt>{t("oc")}</dt>
                                     <dd>QA Test Engineer</dd>	
-                                <dt>Carrera</dt>
+                                <dt>{t("gr")}</dt>
                                     <dd>IDGS 9A</dd>
                             </dl>
                         

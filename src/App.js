@@ -4,12 +4,8 @@ import { Link, Outlet } from 'react-router-dom';
 import { PokemonProvider } from './Context/pokemon-context';
 
 
-export default ()=> <PokemonProvider>
-  <App></App>
-</PokemonProvider>
+
 function App() { 
-
-
 
   return (
     
@@ -32,7 +28,7 @@ function App() {
   	<form className="d-flex" role="search">
     <input type="text" placeholder="Search" aria-label="Search" />
         
-         <button className="btn btn-outline-primary" type="submit">Search</button>
+         <button className="btn btn-outline-primary" type="submit" on>Search</button>
 
        </form>
    </div>
@@ -45,4 +41,4 @@ function App() {
   );
 }
 
-// export default App;
+export default App;

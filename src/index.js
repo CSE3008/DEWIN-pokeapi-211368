@@ -6,11 +6,12 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
 import Allpokemons from './Routes/allpokemons';
-import Pokesearch
- from './Routes/pokesearch';
+import Pokesearch  from './Routes/pokesearch';
+import { PokemonProvider } from './Context/pokemon-context';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <PokemonProvider>
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />}>       
@@ -20,6 +21,7 @@ root.render(
     </Routes>
     <App />
     </BrowserRouter>
+    </PokemonProvider>
    
   </React.StrictMode>
 );

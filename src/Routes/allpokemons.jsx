@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react';
+
+
 export default function Allpokemons(){
     const [pokemons, setPokemons] = useState([])
     const [currentpage, setcurrentpage] = useState(0);
    
+       
     const apiurl = 'https://pokeapi.co/api/v2/pokemon?limit=30'
     
     
@@ -33,9 +36,6 @@ export default function Allpokemons(){
   const prevPage = ()=>{
     setcurrentpage(currentpage - 10);
   }
-
-
-
 
     return(
         

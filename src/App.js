@@ -37,10 +37,15 @@ function App() {
    </div>
  </nav> 
   <Outlet />
+<footer className="bg-light">
 
-       <img src='https://phantom-marca.unidadeditorial.es/9265f61b4b94fe9d71cff8ad932d3a7d/resize/660/f/webp/assets/multimedia/imagenes/2021/02/28/16145196328904.jpg'></img>
-          
-    </div>
+<p>&copy; Copyright 2022. All rights reserved.</p>
+    
+<span>Made with <span class="heart">♥</span> remotely from Anywhere</span>
+
+</footer>
+    
+     </div>
   );
 }
 

@@ -10,13 +10,13 @@ const SearchPokemonContext = () => {
   
     return (
       <form className="d-flex" role="search" onSubmit={context.handleSubmit}>
-           <Link to="/pokesearch">  
+             
         <input
           type="text"
           placeholder={t("Searchp")}
           aria-label="Search"
           onChange={context.setNewSearchString}
-        /> </Link>
+        /> 
        
         <button className="btn btn-outline-primary" type="submit">{t("Search")}
      

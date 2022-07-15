@@ -2,7 +2,7 @@ import './App.css';
 
 import { Link, Outlet } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { useContext, useState } from "react";
+import React, { useContext, useState } from 'react';
 import SearchPokemonContex from './Context/pokemon-context';
 
 export const SearchContext = React.createContext();
@@ -26,6 +26,7 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setFilterString(searchString);
+    
   }
 
   return (
@@ -61,15 +62,9 @@ function App() {
           onClick={() => changeLaguage("en")}
         >       🇺🇸
         </p>
-<SearchPokemonContext></SearchPokemonContex>
+<SearchPokemonContex></SearchPokemonContex>
 
-  	<form className="d-flex" role="search">
-    <input type="text" placeholder={t("Searchp")} aria-label="Search" />
-        
-         <button className="btn btn-outline-primary" type="submit" >{t("Search")}</button>
-         {/* onClick={() => } */}
-
-       </form>
+  	
    </div>
  </nav> 
   <Outlet />

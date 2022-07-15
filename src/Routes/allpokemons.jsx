@@ -8,7 +8,7 @@ export default function Allpokemons(){
     const {i18n, t} = useTranslation(); 
    
        
-    const apiurl = 'https://pokeapi.co/api/v2/pokemon?limit=30'
+    const apiurl = 'https://pokeapi.co/api/v2/pokemon?limit=1154'
     
     
     const fetchpokeapi = async () =>{
@@ -32,11 +32,15 @@ export default function Allpokemons(){
   const pagepokemons = ()=>{
     return pokemons.slice(currentpage,currentpage + 10); 
   }
-  const nextPage = ()=>{
+  const nextPage = ()=>{  
     setcurrentpage(currentpage + 10);
+    
   }
   const prevPage = ()=>{
-    setcurrentpage(currentpage - 10);
+ 
+      setcurrentpage(0); 
+  
+    
   }
 
     return(

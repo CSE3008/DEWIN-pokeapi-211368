@@ -4,6 +4,7 @@ import { Link, Outlet } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import React, { useContext, useState } from 'react';
 import SearchPokemonContex from './Context/pokemon-context';
+import Pokesearch from './Routes/pokesearch';
 
 export const SearchContext = React.createContext();
 
@@ -62,7 +63,7 @@ function App() {
           onClick={() => changeLaguage("en")}
         >       🇺🇸
         </p>
-<SearchPokemonContex></SearchPokemonContex>
+<Pokesearch></Pokesearch>
 
   	
    </div>

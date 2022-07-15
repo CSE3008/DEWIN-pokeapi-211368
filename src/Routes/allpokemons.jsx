@@ -8,7 +8,7 @@ export default function Allpokemons() {
   const { i18n, t } = useTranslation();
   const context = React.useContext(SearchContext); // filterString = '' ahora es = bulbasaur
 
-  const apiurl = "https://pokeapi.co/api/v2/pokemon?limit=30";
+  const apiurl = "https://pokeapi.co/api/v2/pokemon?limit=1154";
 
   const fetchpokeapi = async () => {
     const response = await fetch(apiurl);

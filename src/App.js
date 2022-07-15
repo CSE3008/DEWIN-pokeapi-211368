@@ -1,24 +1,38 @@
 import './App.css';
 
 import { Link, Outlet } from 'react-router-dom';
-import { PokemonProvider } from './Context/pokemon-context';
 import { useTranslation } from 'react-i18next';
-import { useContext } from 'react';
+import { useContext, useState } from "react";
+import SearchPokemonContex from './Context/pokemon-context';
+
+export const SearchContext = React.createContext();
 
 
 
 
 function App() { 
   const {i18n, t} = useTranslation();
+  const [searchString, setSearchString] = useState("");
+  const [filterString, setFilterString] = useState("");
 
   function changeLaguage(language) {
     i18n.changeLanguage(language);
   }
-  
+  const setNewSearchString = (e) => {
+    const searchStringInput = e.target.value;
+    setSearchString(searchStringInput);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setFilterString(searchString);
+  }
 
   return (
     
  <div className="App">
+<SearchContext.Provider value={{ handleSubmit, setNewSearchString, filterString}}>
+
 
  <nav className="navbar bg-light">
    <div className="container-fluid">
@@ -38,18 +52,16 @@ function App() {
             i18n.language === "es" ? "selected" : "unselected"
           }`}
           onClick={() => changeLaguage("es")}
-        >
-          🇲🇽
+        >🇲🇽
         </p>
         <p
           className={`App-link ${
             i18n.language === "en" ? "selected" : "unselected"
           }`}
           onClick={() => changeLaguage("en")}
-        >
-          🇺🇸
+        >       🇺🇸
         </p>
-
+<SearchPokemonContext></SearchPokemonContex>
 
   	<form className="d-flex" role="search">
     <input type="text" placeholder={t("Searchp")} aria-label="Search" />
@@ -68,7 +80,7 @@ function App() {
 <span>Made with <span class="heart">♥</span> remotely from Anywhere</span>
 
 </footer>
-    
+</SearchContext.Provider>
      </div>
   );
 }

@@ -16,7 +16,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <I18nextProvider i18n={i18n}>
-    <PokemonProvider>    
+     
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />}>       
@@ -27,7 +27,7 @@ root.render(
     </Routes>
     {/* <App /> */}
     </BrowserRouter>     
-    </PokemonProvider>  
+ 
     </I18nextProvider>   
   </React.StrictMode>
 );

@@ -1,28 +1,25 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { SearchContext } from "../App";
 
 
-const PokemonContext = React.createContext();
-
-
-
-
-export function PokemonProvider(props){
-   
-    
-   
-    
-const value = useMemo(()=> {
-    return({
-              
-    })
-},[])
-
-return <PokemonContext.Provider value={value} {...props} />
-}
-export function usePokemons (){
-    const context = React.useContext(PokemonContext)
-    if (!context){
-        throw new Error('No existe el Pokemon')
-    }
-    return context;
-}
+const SearchPokemonContext = () => {
+    const { i18n, t } = useTranslation();
+    const context = React.useContext(SearchContext);
+  
+    return (
+      <form className="d-flex" role="search" onSubmit={context.handleSubmit}>
+        <input
+          type="text"
+          placeholder={t("Searchp")}
+          aria-label="Search"
+          onChange={context.setNewSearchString}
+        />
+        <button className="btn btn-outline-primary" type="submit">
+          {t("Search")}
+        </button>
+      </form>
+    );
+  };
+  
+  export default PokemonContext

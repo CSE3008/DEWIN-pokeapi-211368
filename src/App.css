@@ -27,7 +27,32 @@
 .App-link {
   color: #61dafb;
 }
-
+.left-content,.right-content{
+  flex-basis: 50%;
+    }
+    .left-content{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minimax(200px,0.5fr));
+        }
+    .abilities{
+      width: 30%;
+      margin: auto;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 1rem;
+      }
+      .abilities.group{
+        background-color: aquamarine;
+        color: whitesmoke;
+        padding: 0.5rem;
+        border-radius: 8px;
+        
+      }
+      .base-state{
+        margin-top: 2rem;
+      }
+  
 
 
 @keyframes App-logo-spin {

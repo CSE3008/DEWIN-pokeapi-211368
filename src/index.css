@@ -68,6 +68,26 @@ dl dt{
     width: 70%;
     
   }
+  .left-content,.right-content{
+flex-basis: 50%;
+  }
+  .abilities{
+    width: 30%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1rem;
+    }
+    .abilities.group{
+      background-color: aquamarine;
+      color: whitesmoke;
+      padding: 0.5rem;
+      border-radius: 8px;
+    }
+    .base-state{
+      margin-top: 2rem;
+    }
 
-  .flag{}
+
   

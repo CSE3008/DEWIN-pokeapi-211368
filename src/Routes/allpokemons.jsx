@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { Link, Outlet } from 'react-router-dom';
 import { SearchContext } from "../App";
+import '../App'
+
+import Pokecard from "./routeHija/pokecard";
+
 
 export default function Allpokemons() {
   const [pokemons, setPokemons] = useState([]);
   const [currentpage, setcurrentpage] = useState(0);
   const { i18n, t } = useTranslation();
-  const context = React.useContext(SearchContext); // filterString = '' ahora es = bulbasaur
+  const context = React.useContext(SearchContext); 
+  const [pokeinfo,setPokeinfo] = useState();
 
-  const apiurl = "https://pokeapi.co/api/v2/pokemon?limit=1154";
+  const apiurl = "https://pokeapi.co/api/v2/pokemon?limit=54";//1154
 
   const fetchpokeapi = async () => {
     const response = await fetch(apiurl);
@@ -19,12 +25,15 @@ export default function Allpokemons() {
       const respokemon = await fetch(urlpokemon);
       const pokemonJSON = await respokemon.json();
       setPokemons((prevArray) => [...prevArray, pokemonJSON]);
+      console.log(pokemonJSON);
     }
   };
 
   useEffect(() => {
     fetchpokeapi();
   }, []);
+
+  
 
   const pagepokemons = () => {
     return filteredPokemons.slice(currentpage, currentpage + 10);
@@ -43,6 +52,9 @@ export default function Allpokemons() {
       return pokemon;
     }
   });
+  const infopokemon = (poke) =>
+  {setPokeinfo(poke);
+  console.log(poke);}
 
   return (
     <main style={{ padding: "1rem 0" }}>
@@ -53,13 +65,20 @@ export default function Allpokemons() {
           width="400"
           height="140"></img>
         <p></p>
+        
+      
         <div className="container">
+          
+          <Pokecard data={pokeinfo}/>
+          
           <div className="row row-cols-1 row-cols-md-3 g-4">
             {pagepokemons().map((pokemon) => (
               <div className="col-4">
-                <div className="card" key={pokemon.id}>
+                {/* <Link to="/pokecard" className='nav-link' onClick={()=>infopokemon(pokemon)} data={pokeinfo}>    */}
+                <div className="card" key={pokemon.id}  onClick={()=>infopokemon(pokemon)}>
+                  <h3>#0{pokemon.id}</h3>
                   <img
-                    src={pokemon.sprites.front_default}
+                    src={pokemon.sprites.other.dream_world.front_default}
                     className="card-img-top img-thumbnail"></img>
                   <div className="card-footer">
                     <h2 className="card-title fw-bolder text-muted">
@@ -67,9 +86,15 @@ export default function Allpokemons() {
                     </h2>
                   </div>
                 </div>
+                {/* <Link> */}
               </div>
             ))}
+            
+           
           </div>
+          
+         
+          
         </div>
       </div>
       <p></p>
